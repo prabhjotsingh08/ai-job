@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------------------
+# AI-Engineer job-alert bot configuration (separate bot from game-job).
+# Target: REMOTE AI/ML Engineer roles, junior / <=5 years, involving
+# RAG / LLMs / AI agents / agentic AI.
+# ---------------------------------------------------------------------------
+
+# A job is kept ONLY when its TITLE contains one of these role terms (whole-word)
+# AND at least one `topic` below appears in the title or description, AND it isn't
+# excluded by seniority/experience. Add terms to widen.
+keywords:
+  - ai engineer
+  - ml engineer
+  - machine learning engineer
+  - llm engineer
+  - genai engineer
+  - gen ai engineer
+  - generative ai engineer
+  - ai/ml engineer
+  - applied ai
+  - ai developer
+
+# At least ONE of these must appear in the title OR description (the actual tech).
+topics:
+  - rag
+  - llm
+  - llms
+  - large language model
+  - ai agent
+  - ai agents
+  - agentic
+  - agent
+  - agents
+
+# Dropped if ANY appears in the TITLE (keeps the track junior / <=5 years).
+exclude:
+  - senior
+  - sr
+  - staff
+  - principal
+  - lead
+  - "head of"
+  - manager
+  - director
+  - vp
+
+# Max years of experience a JD may require before the role is dropped (e.g. a JD
+# asking "6+ years" or "minimum 7 years" is excluded). Fresher/0-5 yr roles pass.
+max_years: 5
+
+# Generic remote boards that let us pre-filter by tag.
+remoteok_tags:
+  - ai
+  - machine-learning
+  - llm
+
+# No studio boards for the AI track (AI roles aren't on game-studio job boards).
+studios: {}
+
+# Only keep REMOTE jobs.
+remote_only: true
+
+# Countries queried on the Adzuna aggregator (only used if ADZUNA_APP_ID/KEY set).
+adzuna_countries:
+  - gb
+  - us
+  - in
+  - ca
+  - au
+  - de
+
+# Max age (days) to keep a job in the "already-seen" store before pruning.
+seen_retention_days: 60
